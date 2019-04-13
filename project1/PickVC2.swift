@@ -47,7 +47,6 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
         let lat = "\(self.locValue.latitude)".replacingOccurrences(of: ".", with: "_")
         let long = "\(self.locValue.longitude)".replacingOccurrences(of: ".", with: "_")
         let str_loc = lat + long
-<<<<<<< HEAD
         var  clost_loc = "nil"
         //TODO: If no image to pick
         // Look through the locations on Firebase to find the closest
@@ -104,27 +103,7 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
         
             self.ref?.child("Location").child(clost_loc).observeSingleEvent(of: .value, with: { (snapshot) in
                 // Get user value
-                let imagedict = snapshot.value as? NSDictionary
-                
-                //print("val pic 1")
-                //print(imagedict!["Picture1"]!)
-                let index  = Int.random(in: 0 ..< imagedict!.allKeys.count)
-                let randout = Array(imagedict!)[index].value
-                print(randout)
-                
-                // Random image url generated from Firebase given a longitude, latitude.
-                // ...
-            }) { (error) in
-                print(error.localizedDescription)
-            }
-
-        
-        
-=======
-        
-        ref?.child("Location").child(str_loc).observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get user value
-            let imagedict = snapshot.value as? NSDictionary
+      let imagedict = snapshot.value as? NSDictionary
             
             //print("val pic 1")
             //print(imagedict!["Picture1"]!)
@@ -137,19 +116,13 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
                 
                 //TODO: If no image to pick
                 
-                
-                
-                
-                
             }
             
-            
->>>>>>> master
         }) { (error) in
             print(error.localizedDescription)
         }
         
-        
+        })
         
         //let pick_image:UIImage = load_img(position: locValue)
         //self.PickPic.image = pick_image
@@ -157,16 +130,6 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
         //Only for test:
         //self.PickPic.image = #imageLiteral(resourceName: "test")
 
-<<<<<<< HEAD
-        //print ("clost_loc")
-        //print (clost_loc)
-        // Given a location clost_loc, find a random image on Firebase.
-
-        //return data()
-=======
-        //load_img(position: locValue)
-        
->>>>>>> master
     }
     
     func downloadImage(str: String) -> UIImage {
@@ -189,13 +152,13 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
     @IBAction func Confirm(_ sender: UIButton) {
     }
 //
-//    //send image to next view controller
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "sendPickImg" {
-//            let confirmImg = segue.destination as! PickVC3
-//            confirmImg.newImg = self.PickPic.image!
-//        }
-//    }
+    //send image to next view controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sendPickImg" {
+            let confirmImg = segue.destination as! PickVC3
+            confirmImg.newImg = self.PickPic.image!
+        }
+    }
     
 }
 

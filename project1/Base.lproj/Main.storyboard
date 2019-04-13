@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -153,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FCf-Om-OPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1093.5999999999999" y="797.45127436281871"/>
+            <point key="canvasLocation" x="1775" y="983"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="7Ae-uL-f5z">
@@ -339,19 +339,17 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HZe-2u-hcD">
-                                <rect key="frame" x="51" y="100" width="289" height="392"/>
+                                <rect key="frame" x="51" y="100" width="273" height="392"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7J-dU-WCj">
-                                <rect key="frame" x="64" y="509" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7J-dU-WCj">
+                                <rect key="frame" x="61" y="507" width="30" height="30"/>
                                 <state key="normal" title="FB"/>
                                 <connections>
                                     <action selector="ShareFB:" destination="0pO-lY-9wf" eventType="touchUpInside" id="qzW-bf-JRL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jus-Sb-WiL">
-                                <rect key="frame" x="287" y="509" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jus-Sb-WiL">
+                                <rect key="frame" x="259" y="507" width="55" height="30"/>
                                 <state key="normal" title="WeChat"/>
                                 <connections>
                                     <action selector="ShareButton:" destination="0pO-lY-9wf" eventType="touchUpInside" id="AVk-9i-7ph"/>
@@ -374,7 +372,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="HZe-2u-hcD" secondAttribute="trailing" constant="35" id="6ee-vL-KXK"/>
+                            <constraint firstItem="J7J-dU-WCj" firstAttribute="leading" secondItem="TmE-a7-pbd" secondAttribute="leadingMargin" constant="45" id="BWI-wn-SA5"/>
+                            <constraint firstItem="J7J-dU-WCj" firstAttribute="top" secondItem="HZe-2u-hcD" secondAttribute="bottom" constant="15" id="D6k-a7-9sm"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="HZe-2u-hcD" secondAttribute="bottom" constant="175" id="HZ2-pw-qVe"/>
                             <constraint firstItem="9AA-zy-fkW" firstAttribute="leading" secondItem="TmE-a7-pbd" secondAttribute="leadingMargin" constant="100" id="IHW-f5-1IX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jus-Sb-WiL" secondAttribute="trailing" constant="45" id="L0u-FQ-lyN"/>
                             <constraint firstItem="HZe-2u-hcD" firstAttribute="leading" secondItem="TmE-a7-pbd" secondAttribute="leadingMargin" constant="35" id="MWp-AJ-CZv"/>
                             <constraint firstAttribute="bottomMargin" secondItem="9AA-zy-fkW" secondAttribute="bottom" constant="65" id="TGH-5N-38i"/>
                             <constraint firstItem="DLe-ba-7aK" firstAttribute="leading" secondItem="fIx-dw-wWM" secondAttribute="leading" constant="30" id="X0j-gb-Luy"/>
@@ -382,9 +385,8 @@
                             <constraint firstItem="DLe-ba-7aK" firstAttribute="top" secondItem="fIx-dw-wWM" secondAttribute="top" constant="20" id="arE-R7-soU"/>
                             <constraint firstItem="DLe-ba-7aK" firstAttribute="top" secondItem="TmE-a7-pbd" secondAttribute="topMargin" constant="20" id="pFS-3P-Ets"/>
                             <constraint firstItem="DLe-ba-7aK" firstAttribute="leading" secondItem="TmE-a7-pbd" secondAttribute="leadingMargin" constant="14" id="qZr-VU-OOh"/>
-                            <constraint firstItem="fIx-dw-wWM" firstAttribute="trailing" secondItem="HZe-2u-hcD" secondAttribute="trailing" constant="35" id="xm1-5H-z69"/>
+                            <constraint firstItem="Jus-Sb-WiL" firstAttribute="top" secondItem="HZe-2u-hcD" secondAttribute="bottom" constant="15" id="rZz-m9-t2U"/>
                             <constraint firstItem="HZe-2u-hcD" firstAttribute="top" secondItem="TmE-a7-pbd" secondAttribute="topMargin" constant="80" id="yAj-r0-Wab"/>
-                            <constraint firstItem="fIx-dw-wWM" firstAttribute="bottom" secondItem="HZe-2u-hcD" secondAttribute="bottom" constant="175" id="z1g-s5-2Cu"/>
                             <constraint firstAttribute="bottomMargin" secondItem="JO3-qX-17m" secondAttribute="bottom" constant="65" id="zLh-aY-MV4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fIx-dw-wWM"/>
@@ -399,14 +401,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
         <segue reference="F4K-74-KHh"/>
         <segue reference="uld-fZ-NDB"/>
         <segue reference="tc9-jE-1B0"/>
         <segue reference="QYj-76-vYH"/>
-=======
-        <segue reference="Mks-dP-hQe"/>
-        <segue reference="hpC-qO-Ca5"/>
->>>>>>> fff2f041bcfccb0ce9d231d62be6fca3fbcfecf0
     </inferredMetricsTieBreakers>
 </document>

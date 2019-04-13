@@ -44,11 +44,43 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
         }
         
         //set picked image
-        let pick_image:UIImage = load_img(position: locValue)
-        self.PickPic.image = pick_image
+        let lat = "\(self.locValue.latitude)".replacingOccurrences(of: ".", with: "_")
+        let long = "\(self.locValue.longitude)".replacingOccurrences(of: ".", with: "_")
+        let str_loc = lat + long
+        
+        ref?.child("Location").child(str_loc).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let imagedict = snapshot.value as? NSDictionary
+            
+            //print("val pic 1")
+            //print(imagedict!["Picture1"]!)
+            if let y = imagedict{
+                let index  = Int.random(in: 0 ..< imagedict!.allKeys.count)
+                let randout = Array(imagedict!)[index].value as! String
+                print(randout)
+                self.PickPic.image = self.downloadImage(str: randout)
+            } else {
+                
+                //TODO: If no image to pick
+                
+                
+                
+                
+                
+            }
+            
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+        
+        
+        //let pick_image:UIImage = load_img(position: locValue)
+        //self.PickPic.image = pick_image
         
         //Only for test:
-        self.PickPic.image = #imageLiteral(resourceName: "test")
+        //self.PickPic.image = #imageLiteral(resourceName: "test")
 
         //load_img(position: locValue)
         
@@ -63,42 +95,12 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
         return img!
     }
     
-    
-    func load_img(position: CLLocationCoordinate2D) -> String {
-        //TODO: query server using location and decode the image
-        let lat = "\(locValue.latitude)".replacingOccurrences(of: ".", with: "_")
-        let long = "\(locValue.longitude)".replacingOccurrences(of: ".", with: "_")
-        let str_loc = lat + long
-        
-
-        //TODO: If no image to pick
-        
-        
-        ref?.child("Location").child("34_07261627446433-118_45177029832546").observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get user value
-            let imagedict = snapshot.value as? NSDictionary
-            
-            //print("val pic 1")
-            //print(imagedict!["Picture1"]!)
-            let index  = Int.random(in: 0 ..< imagedict!.allKeys.count)
-            let randout = Array(imagedict!)[index].value as! String
-            print(randout)
-            // Random image url generated from Firebase given a longitude, latitude.
-            
-            // ...
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-    }
-
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.locValue = manager.location!.coordinate
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         
         manager.stopUpdatingLocation()
     }
-
-    
     
     // Actions
     @IBAction func Confirm(_ sender: UIButton) {

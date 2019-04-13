@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7FB765822BA2A3A82A5BA0E4 /* Pods_project1UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA83F24AA0E64684266DB725 /* Pods_project1UITests.framework */; };
+		82EC5FDC2262349E00CC2C31 /* ThreeFunctionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC5FDB2262349E00CC2C31 /* ThreeFunctionsViewController.swift */; };
 		93FCE1E42261D4560073EE60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93FCE1E32261D4560073EE60 /* GoogleService-Info.plist */; };
 		C134FE18DAD6D64514ABDABC /* Pods_project1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B7AEE3341DC385F4B2E700 /* Pods_project1.framework */; };
 		D4F489CB2261A9FC0044FE37 /* PickVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F489CA2261A9FC0044FE37 /* PickVC1.swift */; };
@@ -46,6 +47,7 @@
 		2F4EB0D4D8F1A86F689988EB /* Pods-project1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-project1.debug.xcconfig"; path = "Target Support Files/Pods-project1/Pods-project1.debug.xcconfig"; sourceTree = "<group>"; };
 		3684E61A157A60FF8ED7489A /* Pods-project1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-project1Tests.debug.xcconfig"; path = "Target Support Files/Pods-project1Tests/Pods-project1Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F8EDB11AFE83EC447C6E733 /* Pods-project1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-project1Tests.release.xcconfig"; path = "Target Support Files/Pods-project1Tests/Pods-project1Tests.release.xcconfig"; sourceTree = "<group>"; };
+		82EC5FDB2262349E00CC2C31 /* ThreeFunctionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeFunctionsViewController.swift; sourceTree = "<group>"; };
 		85B7AEE3341DC385F4B2E700 /* Pods_project1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_project1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93FCE1E32261D4560073EE60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B9336C247E61765B12723F21 /* Pods-project1UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-project1UITests.release.xcconfig"; path = "Target Support Files/Pods-project1UITests/Pods-project1UITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				D4F70F45226198DD001EC235 /* LaunchScreen.storyboard */,
 				D4F70F48226198DD001EC235 /* Info.plist */,
 				93FCE1E32261D4560073EE60 /* GoogleService-Info.plist */,
+				82EC5FDB2262349E00CC2C31 /* ThreeFunctionsViewController.swift */,
 			);
 			path = project1;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				D4F70F3F226198DC001EC235 /* ViewController.swift in Sources */,
 				D4F489CD2261B20A0044FE37 /* PickVC2.swift in Sources */,
 				D4F70F3D226198DC001EC235 /* AppDelegate.swift in Sources */,
+				82EC5FDC2262349E00CC2C31 /* ThreeFunctionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

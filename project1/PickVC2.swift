@@ -48,6 +48,8 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
         let long = "\(self.locValue.longitude)".replacingOccurrences(of: ".", with: "_")
         let str_loc = lat + long
         
+        
+        
         ref?.child("Location").child(str_loc).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let imagedict = snapshot.value as? NSDictionary

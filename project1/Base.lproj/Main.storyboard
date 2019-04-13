@@ -84,6 +84,7 @@
                                 <state key="normal" title="Camera"/>
                                 <connections>
                                     <action selector="CameraButton:" destination="NyU-fU-uXy" eventType="touchUpInside" id="tud-9R-mOM"/>
+                                    <segue destination="MTp-Q4-GsW" kind="show" id="6lT-1L-weM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ar1-iO-405">
@@ -102,6 +103,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sOW-cb-EbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1034.4000000000001" y="21.139430284857571"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="7Ae-uL-f5z">
+            <objects>
+                <viewController id="MTp-Q4-GsW" customClass="CameraViewController" customModule="project1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZZM-cl-H2h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="X4q-l1-y3b"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5eA-xN-d6A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1878" y="182"/>
         </scene>
         <!--PickVC1-->
         <scene sceneID="iCZ-4p-kju">

@@ -10,6 +10,7 @@
 		7FB765822BA2A3A82A5BA0E4 /* Pods_project1UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA83F24AA0E64684266DB725 /* Pods_project1UITests.framework */; };
 		82EC5FDC2262349E00CC2C31 /* ThreeFunctionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC5FDB2262349E00CC2C31 /* ThreeFunctionsViewController.swift */; };
 		82EC5FDE226242D600CC2C31 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC5FDD226242D600CC2C31 /* CameraViewController.swift */; };
+		82EC5FE02262772B00CC2C31 /* AfterTakenPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC5FDF2262772B00CC2C31 /* AfterTakenPhotoViewController.swift */; };
 		93B33F7B2262666900135C8F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93B33F7A2262666900135C8F /* Default-568h@2x.png */; };
 		93FCE1E42261D4560073EE60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93FCE1E32261D4560073EE60 /* GoogleService-Info.plist */; };
 		C134FE18DAD6D64514ABDABC /* Pods_project1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B7AEE3341DC385F4B2E700 /* Pods_project1.framework */; };
@@ -51,6 +52,7 @@
 		6F8EDB11AFE83EC447C6E733 /* Pods-project1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-project1Tests.release.xcconfig"; path = "Target Support Files/Pods-project1Tests/Pods-project1Tests.release.xcconfig"; sourceTree = "<group>"; };
 		82EC5FDB2262349E00CC2C31 /* ThreeFunctionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeFunctionsViewController.swift; sourceTree = "<group>"; };
 		82EC5FDD226242D600CC2C31 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		82EC5FDF2262772B00CC2C31 /* AfterTakenPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterTakenPhotoViewController.swift; sourceTree = "<group>"; };
 		85B7AEE3341DC385F4B2E700 /* Pods_project1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_project1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B33F7A2262666900135C8F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		93FCE1E32261D4560073EE60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				93FCE1E32261D4560073EE60 /* GoogleService-Info.plist */,
 				82EC5FDB2262349E00CC2C31 /* ThreeFunctionsViewController.swift */,
 				82EC5FDD226242D600CC2C31 /* CameraViewController.swift */,
+				82EC5FDF2262772B00CC2C31 /* AfterTakenPhotoViewController.swift */,
 			);
 			path = project1;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				D4F489D12261B8E50044FE37 /* PickVC3.swift in Sources */,
 				D4F70F3F226198DC001EC235 /* ViewController.swift in Sources */,
 				D4F489CD2261B20A0044FE37 /* PickVC2.swift in Sources */,
+				82EC5FE02262772B00CC2C31 /* AfterTakenPhotoViewController.swift in Sources */,
 				82EC5FDE226242D600CC2C31 /* CameraViewController.swift in Sources */,
 				D4F70F3D226198DC001EC235 /* AppDelegate.swift in Sources */,
 				82EC5FDC2262349E00CC2C31 /* ThreeFunctionsViewController.swift in Sources */,

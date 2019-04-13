@@ -94,6 +94,9 @@ class ThreeFunctionsViewController: UIViewController, UINavigationControllerDele
                 print("url： " + downloadURL.absoluteString)
                 //Save in firebase key-value
                 self.ref?.child("Image").child(latitude + longitude).setValue(downloadURL.absoluteString)
+                
+                self.performSegue(withIdentifier: "ManualToAfterCamera",
+                                  sender: self)
             }
         }
     }

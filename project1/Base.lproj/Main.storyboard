@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IxP-mI-eSx">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IxP-mI-eSx">
                                 <rect key="frame" x="103" y="280" width="168" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -28,7 +28,7 @@
                                     <action selector="User:" destination="aa9-2R-Ci3" eventType="editingDidEnd" id="VHG-1M-Bp0"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ls3-d7-EUe">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ls3-d7-EUe">
                                 <rect key="frame" x="103" y="318" width="168" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -100,10 +100,10 @@
             </objects>
             <point key="canvasLocation" x="1034.4000000000001" y="21.139430284857571"/>
         </scene>
-        <!--View Controller-->
+        <!--PickVC1-->
         <scene sceneID="iCZ-4p-kju">
             <objects>
-                <viewController id="Hc6-bm-arY" sceneMemberID="viewController">
+                <viewController id="Hc6-bm-arY" customClass="PickVC1" customModule="project1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pQz-U8-XiC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,6 +120,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Pick!"/>
                                 <connections>
+                                    <action selector="PickPic:" destination="Hc6-bm-arY" eventType="touchUpInside" id="H3q-8v-vec"/>
                                     <segue destination="Wac-ud-oBW" kind="show" id="dQo-Re-JsO"/>
                                 </connections>
                             </button>
@@ -142,15 +143,15 @@
             </objects>
             <point key="canvasLocation" x="1940" y="-551.87406296851577"/>
         </scene>
-        <!--View Controller-->
+        <!--PickVC2-->
         <scene sceneID="bjp-Nb-eUh">
             <objects>
-                <viewController id="Wac-ud-oBW" sceneMemberID="viewController">
+                <viewController id="Wac-ud-oBW" customClass="PickVC2" customModule="project1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ybB-e7-SxD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9NR-vB-Alv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9NR-vB-Alv" customClass="PickPic">
                                 <rect key="frame" x="51" y="98" width="273" height="363"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -175,6 +176,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="yes"/>
                                 <connections>
+                                    <action selector="Confirm:" destination="Wac-ud-oBW" eventType="touchUpInside" id="Z8M-8o-aJW"/>
                                     <segue destination="0pO-lY-9wf" kind="show" id="F4K-74-KHh"/>
                                 </connections>
                             </button>
@@ -182,15 +184,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="mvX-7Y-aEt"/>
                     </view>
+                    <connections>
+                        <outlet property="PickPic" destination="9NR-vB-Alv" id="nBv-2n-36A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TEu-lH-CdG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2706.4000000000001" y="-553.67316341829087"/>
         </scene>
-        <!--View Controller-->
+        <!--PickVC3-->
         <scene sceneID="SZi-VK-ASh">
             <objects>
-                <viewController id="0pO-lY-9wf" sceneMemberID="viewController">
+                <viewController id="0pO-lY-9wf" customClass="PickVC3" customModule="project1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TmE-a7-pbd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -210,11 +215,17 @@
                                 <rect key="frame" x="64" y="509" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="FB"/>
+                                <connections>
+                                    <action selector="ShareFB:" destination="0pO-lY-9wf" eventType="touchUpInside" id="qzW-bf-JRL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jus-Sb-WiL">
                                 <rect key="frame" x="287" y="509" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="WeChat"/>
+                                <connections>
+                                    <action selector="ShareButton:" destination="0pO-lY-9wf" eventType="touchUpInside" id="AVk-9i-7ph"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9AA-zy-fkW">
                                 <rect key="frame" x="123" y="576" width="48" height="30"/>
@@ -239,6 +250,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fIx-dw-wWM"/>
                     </view>
+                    <connections>
+                        <outlet property="ImgView" destination="HZe-2u-hcD" id="sNN-C9-JeO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vcP-Zm-GEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -246,7 +260,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nyK-80-omK"/>
-        <segue reference="ejN-ty-vQm"/>
+        <segue reference="uld-fZ-NDB"/>
+        <segue reference="QYj-76-vYH"/>
     </inferredMetricsTieBreakers>
 </document>

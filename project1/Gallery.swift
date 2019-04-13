@@ -12,6 +12,8 @@ import Firebase
 import FirebaseDatabase
 
 class Gallery: UICollectionViewController {
+        
+    
     let reuseIdentifier = "ImgCell"
     let sectionInsets = UIEdgeInsets(top: 50.0,
                                      left: 20.0,
@@ -31,6 +33,7 @@ class Gallery: UICollectionViewController {
     
     func getURL() -> () {
         //get a list of URLs(strings) from server
+        //self.userImgs =
         
     }
     
@@ -60,9 +63,19 @@ class Gallery: UICollectionViewController {
         print(urlStr)
         cell.backgroundColor = .white
         
-        cell.imageView.image = downloadImage(str: urlStr)
+        cell.Img.image = downloadImage(str: urlStr)
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "Detail"){
+            let cell = sender as! CollectionViewCell
+            var destination = segue.destination as! PickVC3
+            destination.newImg = cell.Img.image!
+            
+        }
+    }
+
     
 }

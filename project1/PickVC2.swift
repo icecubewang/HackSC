@@ -16,6 +16,7 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var locValue = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
     var ref: DatabaseReference?
+    var databaseHandle: DatabaseHandle?
     //override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         //super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 //        self.locValue.latitude = Double("")!
@@ -43,24 +44,45 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
         }
         
         //set picked image
-        let pick_image:UIImage = load_img(position: locValue)
-        self.PickPic.image = pick_image
+//        let pick_image:UIImage = load_img(position: locValue)
+//        self.PickPic.image = pick_image
         
         //Only for test:
-        //self.PickPic.image = #imageLiteral(resourceName: "test")
+        self.PickPic.image = #imageLiteral(resourceName: "test")
+        load_img(position: locValue)
         
     }
     
-    func load_img(position: CLLocationCoordinate2D) -> UIImage {
+    func load_img(position: CLLocationCoordinate2D) {
         //TODO: query server using location and decode the image
         let lat = "\(locValue.latitude)".replacingOccurrences(of: ".", with: "_")
         let long = "\(locValue.longitude)".replacingOccurrences(of: ".", with: "_")
         let str_loc = lat + long
+        
+        
 
         //TODO: If no image to pick
+        
+        ref?.child("Location").child("34_07261627446433-118_45177029832546").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let imagedict = snapshot.value as? NSDictionary
+            
+            //print("val pic 1")
+            //print(imagedict!["Picture1"]!)
+            let index  = Int.random(in: 0 ..< imagedict!.allKeys.count)
+            let randout = Array(imagedict!)[index].value
+            print(randout)
+            
+            // Random image url generated from Firebase given a longitude, latitude.
 
+            
+            
+            // ...
+        }) { (error) in
+            print(error.localizedDescription)
+        }
 
-        return UIImage()
+        //return data()
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

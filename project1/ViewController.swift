@@ -27,8 +27,9 @@ class ViewController: UIViewController {
     @IBAction func createAccount(_ sender: UIButton) {
         let user_name = username.text!
         let pass_word = password.text!
+        let pass_word_encrypted = pass_word.encodeWithXorByte(key: 28)
         
-        self.ref?.child("UserAccountInfo").child(user_name).setValue(pass_word)
+        self.ref?.child("UserAccountInfo").child(user_name).setValue(pass_word_encrypted)
         
         let alert = UIAlertController(title: "Account created!", message: "Please login to your account.", preferredStyle: .alert)
         
@@ -40,11 +41,12 @@ class ViewController: UIViewController {
     @IBAction func signIn(_ sender: UIButton) {
         let user_name = username.text!
         let pass_word = password.text!
+        let pass_word_encrypted = pass_word.encodeWithXorByte(key: 28)
         
         self.ref?.child("UserAccountInfo").child(user_name).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let password = snapshot.value as? String
-            if password == pass_word {
+            if password == pass_word_encrypted {
                 UserDefaults.standard.set(user_name, forKey: "Username")
                 self.performSegue(withIdentifier: "SignInTo3Functions",
                                   sender: self)
@@ -63,3 +65,8 @@ class ViewController: UIViewController {
     }
 }
 
+extension String {
+    func encodeWithXorByte(key: UInt8) -> String {
+        return String(bytes: self.utf8.map{$0 ^ key}, encoding: String.Encoding.utf8) ?? ""
+    }
+}

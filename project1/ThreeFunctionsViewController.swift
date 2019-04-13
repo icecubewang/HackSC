@@ -17,7 +17,7 @@ class ThreeFunctionsViewController: UIViewController, UINavigationControllerDele
     }
     
     @IBAction func CameraButton(_ sender: Any) {
-        let vc = UIImagePickerController()
+        let vc = CameraViewController()
         vc.sourceType = .camera
         vc.allowsEditing = true
         vc.delegate = self
@@ -34,6 +34,8 @@ class ThreeFunctionsViewController: UIViewController, UINavigationControllerDele
         
         // print out the image size as a test
         print(image.size)
+        
+        //TODO: Send image to server
     }
     
     /*

@@ -60,7 +60,7 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
         //TODO: If no image to pick
 
 
-        return
+        return UIImage()
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

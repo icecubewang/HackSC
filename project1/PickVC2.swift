@@ -16,20 +16,20 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var locValue = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
     var ref: DatabaseReference?
-    
-//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    //override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        //super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 //        self.locValue.latitude = Double("")!
 //        self.locValue.longitude = Double("")!
-//    }
-//
+    //}
+    
 //    required init?(coder aDecoder: NSCoder) {
 //        fatalError("init(coder:) has not been implemented")
 //    }
-//
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
         self.ref = Database.database().reference()
         self.PickPic.image = #imageLiteral(resourceName: "loading")
         
@@ -69,6 +69,7 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
         
         manager.stopUpdatingLocation()
     }
+
     
     
     // Actions

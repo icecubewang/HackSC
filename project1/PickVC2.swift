@@ -104,7 +104,7 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
                     self.PickPic.image = self.downloadImage(str: randout)
                 } else {
                     
-                    //TODO: If no image to pick
+                    self.PickPic.image = #imageLiteral(resourceName: "default")
                     
                 }
                 
@@ -114,11 +114,7 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
             
         })
         
-        //let pick_image:UIImage = load_img(position: locValue)
-        //self.PickPic.image = pick_image
-        
-        //Only for test:
-        //self.PickPic.image = #imageLiteral(resourceName: "test")
+        //TODO: delete pic
     }
     
     func downloadImage(str: String) -> UIImage {

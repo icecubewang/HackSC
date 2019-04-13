@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="151" y="22"/>
         </scene>
-        <!--View Controller-->
+        <!--Three Function Page View Controller-->
         <scene sceneID="7Um-88-K1a">
             <objects>
-                <viewController id="NyU-fU-uXy" sceneMemberID="viewController">
+                <viewController id="NyU-fU-uXy" customClass="ThreeFunctionPageViewController" customModule="project1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IhK-CP-Iue">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,6 +82,10 @@
                                 <rect key="frame" x="16" y="427" width="343" height="171"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="CameraButton:" destination="NyU-fU-uXy" eventType="touchUpInside" id="vv6-99-vfS"/>
+                                    <segue destination="S8B-4C-Exy" kind="show" id="od0-QZ-KYL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ar1-iO-405">
                                 <rect key="frame" x="16" y="31" width="49" height="30"/>
@@ -99,6 +103,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sOW-cb-EbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1034.4000000000001" y="21.139430284857571"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="4RR-5U-pWn">
+            <objects>
+                <viewController id="S8B-4C-Exy" customClass="CameraViewController" customModule="project1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gDT-XC-e0F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="bie-uK-X5d"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AAF-9J-PvC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2136" y="435"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="iCZ-4p-kju">
@@ -246,7 +265,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nyK-80-omK"/>
-        <segue reference="ejN-ty-vQm"/>
+        <segue reference="Mks-dP-hQe"/>
+        <segue reference="QYj-76-vYH"/>
     </inferredMetricsTieBreakers>
 </document>

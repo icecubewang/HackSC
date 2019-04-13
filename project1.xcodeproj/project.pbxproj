@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E5848DE2261B6F200386F19 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5848DD2261B6F200386F19 /* CameraViewController.swift */; };
+		9E5848E02261B92700386F19 /* ThreeFunctionPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5848DF2261B92700386F19 /* ThreeFunctionPageViewController.swift */; };
 		D4F70F3D226198DC001EC235 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F70F3C226198DC001EC235 /* AppDelegate.swift */; };
 		D4F70F3F226198DC001EC235 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F70F3E226198DC001EC235 /* ViewController.swift */; };
 		D4F70F42226198DC001EC235 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4F70F40226198DC001EC235 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E5848DD2261B6F200386F19 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		9E5848DF2261B92700386F19 /* ThreeFunctionPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeFunctionPageViewController.swift; sourceTree = "<group>"; };
 		D4F70F39226198DC001EC235 /* project1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F70F3C226198DC001EC235 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4F70F3E226198DC001EC235 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 				D4F70F43226198DD001EC235 /* Assets.xcassets */,
 				D4F70F45226198DD001EC235 /* LaunchScreen.storyboard */,
 				D4F70F48226198DD001EC235 /* Info.plist */,
+				9E5848DD2261B6F200386F19 /* CameraViewController.swift */,
+				9E5848DF2261B92700386F19 /* ThreeFunctionPageViewController.swift */,
 			);
 			path = project1;
 			sourceTree = "<group>";
@@ -258,6 +264,8 @@
 			files = (
 				D4F70F3F226198DC001EC235 /* ViewController.swift in Sources */,
 				D4F70F3D226198DC001EC235 /* AppDelegate.swift in Sources */,
+				9E5848E02261B92700386F19 /* ThreeFunctionPageViewController.swift in Sources */,
+				9E5848DE2261B6F200386F19 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

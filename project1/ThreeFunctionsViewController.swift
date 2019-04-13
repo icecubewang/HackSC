@@ -8,16 +8,20 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 import CoreLocation
 
 class ThreeFunctionsViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate {
 
     let locationManager = CLLocationManager()
+    var ref: DatabaseReference?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        self.ref = Database.database().reference()
+
         // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()
         
@@ -53,11 +57,14 @@ class ThreeFunctionsViewController: UIViewController, UINavigationControllerDele
         let imageData: Data = image.pngData()!
         let imageStr = imageData.base64EncodedString()
         
-        //Get user's current location
-        guard let locValue: CLLocationCoordinate2D = locationManager.location?.coordinate else { return }
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        //print("image: \(imageStr)")
         
-        Database.database().reference().child("Image").child("\(locValue.latitude) \(locValue.longitude)").setValue(imageStr)
+        //Get user's current location
+        //guard let locValue: CLLocationCoordinate2D = locationManager.location?.coordinate else { return }
+        let locValue = locationManager.location?.coordinate
+        print("locations = \(locValue?.latitude) \(locValue?.longitude)")
+        ref?.child("Images").childByAutoId().setValue("Does this even work?")
+        ref?.child("Image").child("\(locValue?.latitude) \(locValue?.longitude)").setValue(imageStr)
     }
     
     /*

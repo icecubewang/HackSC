@@ -26,6 +26,18 @@ class ViewController: UIViewController {
     
     @IBAction func createAccount(_ sender: UIButton) {
         let user_name = username.text!
+        
+        self.ref?.child("UserAccountInfo").observeSingleEvent(of: .value, with: { (snapshot) in
+            if snapshot.hasChild(user_name) {
+                let alert = UIAlertController(title: "Username already in used!", message: "Please come up with a new username.", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
+                self.present(alert, animated: true)
+                
+            }
+        })
+        
         let pass_word = password.text!
         let pass_word_encrypted = pass_word.encodeWithXorByte(key: 28)
         

@@ -10,14 +10,14 @@ import Foundation
 
 import UIKit
 import CoreLocation
-
+import Firebase
+import FirebaseDatabase
 
 class PickVC2: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var PickPic: UIImageView!
     let locationManager = CLLocationManager()
-    //var locValue
-    var loc_latitude = Double("")
-    var loc_longitude = Double("")
+    var locValue = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
+    var ref: DatabaseReference?
     
 //    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 //        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -32,6 +32,7 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.ref = Database.database().reference()
         self.PickPic.image = #imageLiteral(resourceName: "loading")
         
         // Ask for Authorisation from the User.
@@ -44,27 +45,25 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
         }
         
         //set picked image
-        let pick_image:UIImage = load_img(position: locValue)
-        self.PickPic.image = pick_image
+//        let pick_image:UIImage = load_img(position: locValue)
+//        self.PickPic.image = pick_image
         
         //Only for test:
-        //self.PickPic.image = #imageLiteral(resourceName: "test")
+        self.PickPic.image = #imageLiteral(resourceName: "test")
         
     }
     
-    func load_img(position: CLLocationCoordinate2D) -> UIImage {
-        //TODO: query server using location and decode the image
-        //self.locValue.latitude, self.locValue.longitude
-        
-        //TODO: If no image to pick
-        return
-    }
-    
+//    func load_img(position: CLLocationCoordinate2D) -> UIImage {
+//        //TODO: query server using location and decode the image
+//        //self.locValue.latitude, self.locValue.longitude
+//
+//        //TODO: If no image to pick
+//        return
+//    }
+//
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let locValue = manager.location!.coordinate
-        self.loc_latitude = locValue.latitude
-        self.loc_longitude = locValue.longitude
-        
+        self.locValue = manager.location!.coordinate
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
         manager.stopUpdatingLocation()
     }
     

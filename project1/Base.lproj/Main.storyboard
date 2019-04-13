@@ -75,7 +75,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Pick"/>
                                 <connections>
-                                    <segue destination="Hc6-bm-arY" kind="show" id="Mks-dP-hQe"/>
+                                    <segue destination="Hc6-bm-arY" kind="showDetail" id="Mks-dP-hQe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJS-rI-CRq">
@@ -123,12 +123,12 @@
         <scene sceneID="iCZ-4p-kju">
             <objects>
                 <viewController id="Hc6-bm-arY" customClass="PickVC1" customModule="project1" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pQz-U8-XiC">
+                    <view key="view" contentMode="TopLeft" id="pQz-U8-XiC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNx-mI-53N">
-                                <rect key="frame" x="30" y="40" width="45" height="27"/>
+                                <rect key="frame" x="30" y="40" width="41" height="30"/>
                                 <state key="normal" title="Home"/>
                                 <connections>
                                     <segue destination="NyU-fU-uXy" kind="show" id="dqB-9M-SEQ"/>
@@ -140,20 +140,14 @@
                                 <state key="normal" title="Pick!"/>
                                 <connections>
                                     <action selector="PickPic:" destination="Hc6-bm-arY" eventType="touchUpInside" id="H3q-8v-vec"/>
-                                    <segue destination="Wac-ud-oBW" kind="show" id="dQo-Re-JsO"/>
+                                    <segue destination="Wac-ud-oBW" kind="showDetail" id="dQo-Re-JsO"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="wNx-mI-53N" firstAttribute="leading" secondItem="EvY-Jo-A5b" secondAttribute="leading" constant="30" id="54A-sl-5xk"/>
-                            <constraint firstItem="EvY-Jo-A5b" firstAttribute="trailing" secondItem="wNx-mI-53N" secondAttribute="trailing" constant="300" id="5Fu-gI-gnI"/>
-                            <constraint firstItem="wNx-mI-53N" firstAttribute="top" secondItem="EvY-Jo-A5b" secondAttribute="top" constant="20" id="7sM-ET-mia"/>
-                            <constraint firstItem="wNx-mI-53N" firstAttribute="leading" secondItem="EvY-Jo-A5b" secondAttribute="leading" constant="30" id="P70-ji-0f1"/>
-                            <constraint firstItem="wNx-mI-53N" firstAttribute="top" secondItem="pQz-U8-XiC" secondAttribute="topMargin" constant="20" id="TvZ-0e-w35"/>
-                            <constraint firstItem="EvY-Jo-A5b" firstAttribute="trailing" secondItem="wNx-mI-53N" secondAttribute="trailing" constant="300" id="bsV-ay-TDv"/>
-                            <constraint firstItem="EvY-Jo-A5b" firstAttribute="bottom" secondItem="wNx-mI-53N" secondAttribute="bottom" constant="600" id="lJh-aD-Rk9"/>
-                            <constraint firstItem="EvY-Jo-A5b" firstAttribute="bottom" secondItem="wNx-mI-53N" secondAttribute="bottom" constant="600" id="njh-oT-MUm"/>
+                            <constraint firstItem="wNx-mI-53N" firstAttribute="top" secondItem="pQz-U8-XiC" secondAttribute="topMargin" constant="20" id="M7G-M9-Kub"/>
+                            <constraint firstItem="wNx-mI-53N" firstAttribute="leading" secondItem="pQz-U8-XiC" secondAttribute="leadingMargin" constant="14" id="UrL-7r-Srn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EvY-Jo-A5b"/>
                     </view>
@@ -166,7 +160,7 @@
         <scene sceneID="bjp-Nb-eUh">
             <objects>
                 <viewController id="Wac-ud-oBW" customClass="PickVC2" customModule="project1" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ybB-e7-SxD">
+                    <view key="view" contentMode="TopLeft" id="ybB-e7-SxD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -174,9 +168,8 @@
                                 <rect key="frame" x="51" y="98" width="273" height="363"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQa-To-Ze7">
-                                <rect key="frame" x="30" y="40" width="41" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQa-To-Ze7">
+                                <rect key="frame" x="30" y="40" width="41" height="30"/>
                                 <state key="normal" title="Home"/>
                                 <connections>
                                     <segue destination="NyU-fU-uXy" kind="show" id="ejN-ty-vQm"/>
@@ -196,11 +189,15 @@
                                 <state key="normal" title="yes"/>
                                 <connections>
                                     <action selector="Confirm:" destination="Wac-ud-oBW" eventType="touchUpInside" id="Z8M-8o-aJW"/>
-                                    <segue destination="0pO-lY-9wf" kind="show" identifier="sendPickImg" id="F4K-74-KHh"/>
+                                    <segue destination="0pO-lY-9wf" kind="showDetail" identifier="sendPickImg" id="F4K-74-KHh"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nQa-To-Ze7" firstAttribute="top" secondItem="ybB-e7-SxD" secondAttribute="topMargin" constant="20" id="OGy-NX-jJC"/>
+                            <constraint firstItem="nQa-To-Ze7" firstAttribute="leading" secondItem="ybB-e7-SxD" secondAttribute="leadingMargin" constant="14" id="Yid-j8-FpU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mvX-7Y-aEt"/>
                     </view>
                     <connections>
@@ -215,12 +212,12 @@
         <scene sceneID="SZi-VK-ASh">
             <objects>
                 <viewController id="0pO-lY-9wf" customClass="PickVC3" customModule="project1" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TmE-a7-pbd">
+                    <view key="view" contentMode="TopLeft" id="TmE-a7-pbd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLe-ba-7aK">
-                                <rect key="frame" x="30" y="40" width="45" height="27"/>
+                                <rect key="frame" x="30" y="40" width="41" height="30"/>
                                 <state key="normal" title="Home"/>
                                 <connections>
                                     <segue destination="NyU-fU-uXy" kind="show" id="QYj-76-vYH"/>
@@ -263,9 +260,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DLe-ba-7aK" firstAttribute="leading" secondItem="fIx-dw-wWM" secondAttribute="leading" constant="30" id="X0j-gb-Luy"/>
-                            <constraint firstItem="DLe-ba-7aK" firstAttribute="top" secondItem="fIx-dw-wWM" secondAttribute="top" constant="20" id="XTY-ln-Cy9"/>
-                            <constraint firstItem="fIx-dw-wWM" firstAttribute="trailing" secondItem="DLe-ba-7aK" secondAttribute="trailing" constant="300" id="pSn-Cg-LLD"/>
-                            <constraint firstItem="fIx-dw-wWM" firstAttribute="bottom" secondItem="DLe-ba-7aK" secondAttribute="bottom" constant="600" id="y4G-ra-CLH"/>
+                            <constraint firstItem="DLe-ba-7aK" firstAttribute="top" secondItem="fIx-dw-wWM" secondAttribute="top" constant="20" id="arE-R7-soU"/>
+                            <constraint firstItem="DLe-ba-7aK" firstAttribute="top" secondItem="TmE-a7-pbd" secondAttribute="topMargin" constant="20" id="pFS-3P-Ets"/>
+                            <constraint firstItem="DLe-ba-7aK" firstAttribute="leading" secondItem="TmE-a7-pbd" secondAttribute="leadingMargin" constant="14" id="qZr-VU-OOh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fIx-dw-wWM"/>
                     </view>
@@ -279,7 +276,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nyK-80-omK"/>
-        <segue reference="ejN-ty-vQm"/>
+        <segue reference="uld-fZ-NDB"/>
+        <segue reference="QYj-76-vYH"/>
     </inferredMetricsTieBreakers>
 </document>

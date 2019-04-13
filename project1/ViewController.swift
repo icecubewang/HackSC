@@ -45,6 +45,7 @@ class ViewController: UIViewController {
             // Get user value
             let password = snapshot.value as? String
             if password == pass_word {
+                UserDefaults.standard.set(user_name, forKey: "Username")
                 self.performSegue(withIdentifier: "SignInTo3Functions",
                                   sender: self)
             }

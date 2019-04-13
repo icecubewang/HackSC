@@ -43,25 +43,25 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
         }
         
         //set picked image
-        let pick_image:UIImage = load_img(position: locValue)
-        self.PickPic.image = pick_image
+//        let pick_image:UIImage = load_img(position: locValue)
+//        self.PickPic.image = pick_image
         
         //Only for test:
-        //self.PickPic.image = #imageLiteral(resourceName: "test")
+        self.PickPic.image = #imageLiteral(resourceName: "test")
         
     }
     
-    func load_img(position: CLLocationCoordinate2D) -> UIImage {
-        //TODO: query server using location and decode the image
-        let lat = "\(locValue.latitude)".replacingOccurrences(of: ".", with: "_")
-        let long = "\(locValue.longitude)".replacingOccurrences(of: ".", with: "_")
-        let str_loc = lat + long
-
-        //TODO: If no image to pick
-
-
-        return
-    }
+//    func load_img(position: CLLocationCoordinate2D) -> UIImage {
+//        //TODO: query server using location and decode the image
+//        let lat = "\(locValue.latitude)".replacingOccurrences(of: ".", with: "_")
+//        let long = "\(locValue.longitude)".replacingOccurrences(of: ".", with: "_")
+//        let str_loc = lat + long
+//
+//        //TODO: If no image to pick
+//
+//
+//        return
+//    }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.locValue = manager.location!.coordinate

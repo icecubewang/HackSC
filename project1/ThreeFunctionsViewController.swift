@@ -78,7 +78,6 @@ class ThreeFunctionsViewController: UIViewController, UINavigationControllerDele
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
         
-
         // Upload the file to the path "images/rivers.jpg"
         let uploadTask = riversRef.putData(data, metadata: metadata) { (metadata, error) in
             guard let metadata = metadata else {
@@ -99,6 +98,9 @@ class ThreeFunctionsViewController: UIViewController, UINavigationControllerDele
                 self.performSegue(withIdentifier: "ManualToAfterCamera",
                                   sender: self)
             }
+            
+            self.performSegue(withIdentifier: "ManualToAfterCamera",
+                              sender: self)
         }
     }
     

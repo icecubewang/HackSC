@@ -78,7 +78,6 @@ class ThreeFunctionsViewController: UIViewController, UINavigationControllerDele
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
         
-
         // Upload the file to the path "images/rivers.jpg"
         let uploadTask = riversRef.putData(data, metadata: metadata) { (metadata, error) in
             guard let metadata = metadata else {
@@ -98,10 +97,10 @@ class ThreeFunctionsViewController: UIViewController, UINavigationControllerDele
                 
                 let user_name = UserDefaults.standard.object(forKey: "Username") as! String
                 self.ref?.child("UserImageList").child(user_name).childByAutoId().setValue(downloadURL.absoluteString)
-                
-                self.performSegue(withIdentifier: "ManualToAfterCamera",
-                                  sender: self)
             }
+            
+            self.performSegue(withIdentifier: "ManualToAfterCamera",
+                              sender: self)
         }
     }
     

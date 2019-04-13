@@ -9,6 +9,7 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
     var locValue = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
     var ref: DatabaseReference?
     var databaseHandle: DatabaseHandle?
+    var url: String?
     //override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     //super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     //        self.locValue.latitude = Double("")!
@@ -93,7 +94,17 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
             
             self.ref?.child("Location").child(clost_loc).observeSingleEvent(of: .value, with: { (snapshot) in
                 // Get user value
-                let imagedict = snapshot.value as? NSDictionary
+      let imagedict = snapshot.value as? NSDictionary
+            
+            //print("val pic 1")
+            //print(imagedict!["Picture1"]!)
+            if let y = imagedict{
+                let index  = Int.random(in: 0 ..< imagedict!.allKeys.count)
+                let randout = Array(imagedict!)[index].value as! String
+                print(randout)
+                self.url=randout
+                self.PickPic.image = self.downloadImage(str: randout)
+            } else {
                 
                 //print("val pic 1")
                 //print(imagedict!["Picture1"]!)
@@ -140,6 +151,9 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
     //send image to next view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "sendPickImg" {
+            
+            let user_name = UserDefaults.standard.object(forKey: "Username") as! String
+        self.ref?.child("UserImageList").child(user_name).childByAutoId().setValue(self.url)
             let confirmImg = segue.destination as! PickVC3
             confirmImg.newImg = self.PickPic.image!
         }

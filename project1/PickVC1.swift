@@ -22,7 +22,6 @@ class PickVC1: UIViewController {
     
     @IBAction func PickPic(_ sender: UIButton) {
         
-        
     }
     
 

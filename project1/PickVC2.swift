@@ -47,10 +47,63 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
         let lat = "\(self.locValue.latitude)".replacingOccurrences(of: ".", with: "_")
         let long = "\(self.locValue.longitude)".replacingOccurrences(of: ".", with: "_")
         let str_loc = lat + long
-        
-        ref?.child("Location").child(str_loc).observeSingleEvent(of: .value, with: { (snapshot) in
+        var  clost_loc = "nil"
+        //TODO: If no image to pick
+        // Look through the locations on Firebase to find the closest
+        ref?.child("Location").observeSingleEvent(of: .value, with: { (locsnapshot) in
             // Get user value
-            let imagedict = snapshot.value as? NSDictionary
+            //print(locsnapshot)
+            let locdict = locsnapshot.value as! NSDictionary
+            //print(locdict as Any)
+            //print("keys")
+
+            let  lockeys=locdict.allKeys
+            var  distance = CLLocationDistance(-1)
+            
+            for location in lockeys{
+                //print(location)
+                
+                var locconv = location as! String
+                var fullsplit = locconv.characters.split{$0 == "-"}.map(String.init)
+                let lat_tt = Double(fullsplit[0].replacingOccurrences(of: "_", with: "."))
+                let long_tt = Double(fullsplit[1].replacingOccurrences(of: "_", with: "."))
+                //print(lat_tt as Any)
+                //print(long_tt as Any)
+                
+                
+
+                let coordinate₀ = CLLocation(latitude: self.locValue.latitude, longitude: self.locValue.longitude)
+                let coordinate₁ = CLLocation(latitude: lat_tt!, longitude: long_tt!)
+                
+                let distanceInMeters = coordinate₀.distance(from: coordinate₁)
+                //print("distanceInMeters")
+                //print(distanceInMeters)// result is in meters
+                //print("distance")
+               // print(distance)
+                if distance == -1{
+                    distance=distanceInMeters
+                    clost_loc=location as! String
+                    //print ("clost_loc initial")
+                    //print (clost_loc)
+                }
+                else if Double(distanceInMeters)<distance {
+                    distance=distanceInMeters
+                    clost_loc=location as! String
+                    //print ("clost_loc FInal")
+                    //print (clost_loc)
+                }
+//                newm=
+//                if 0 < distance {
+//                    distance = new_min
+//                    clost_loc = location}
+            }
+            //print(locdict.allKeys)
+            // Random image url generated from Firebase given a longitude, latitude.
+            // ...
+        
+            self.ref?.child("Location").child(clost_loc).observeSingleEvent(of: .value, with: { (snapshot) in
+                // Get user value
+      let imagedict = snapshot.value as? NSDictionary
             
             //print("val pic 1")
             //print(imagedict!["Picture1"]!)
@@ -63,18 +116,13 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
                 
                 //TODO: If no image to pick
                 
-                
-                
-                
-                
             }
-            
             
         }) { (error) in
             print(error.localizedDescription)
         }
         
-        
+        })
         
         //let pick_image:UIImage = load_img(position: locValue)
         //self.PickPic.image = pick_image
@@ -82,8 +130,6 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
         //Only for test:
         //self.PickPic.image = #imageLiteral(resourceName: "test")
 
-        //load_img(position: locValue)
-        
     }
     
     func downloadImage(str: String) -> UIImage {
@@ -106,13 +152,13 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
     @IBAction func Confirm(_ sender: UIButton) {
     }
 //
-//    //send image to next view controller
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "sendPickImg" {
-//            let confirmImg = segue.destination as! PickVC3
-//            confirmImg.newImg = self.PickPic.image!
-//        }
-//    }
+    //send image to next view controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sendPickImg" {
+            let confirmImg = segue.destination as! PickVC3
+            confirmImg.newImg = self.PickPic.image!
+        }
+    }
     
 }
 

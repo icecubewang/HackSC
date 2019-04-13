@@ -96,9 +96,6 @@ class ThreeFunctionsViewController: UIViewController, UINavigationControllerDele
                 //Save in firebase key-value
                 self.ref?.child("Location").child(latitude + longitude).childByAutoId().setValue(downloadURL.absoluteString)
                 
-                let user_name = UserDefaults.standard.object(forKey: "Username") as! String
-                self.ref?.child("UserImageList").child(user_name).childByAutoId().setValue(downloadURL.absoluteString)
-                
                 self.performSegue(withIdentifier: "ManualToAfterCamera",
                                   sender: self)
             }

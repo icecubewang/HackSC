@@ -37,13 +37,28 @@ class ViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
-    @IBAction func signin(_ sender: UIButton) {
-//        let user_name = username.text!
-//        let pass_word = password.text!
-//
-//        self.ref?.child("UserAccountInfo").child(user_name)
+    @IBAction func signIn(_ sender: UIButton) {
+        let user_name = username.text!
+        let pass_word = password.text!
+        
+        self.ref?.child("UserAccountInfo").child(user_name).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let password = snapshot.value as? String
+            if password == pass_word {
+                self.performSegue(withIdentifier: "SignInTo3Functions",
+                                  sender: self)
+            }
+            else {
+                let alert = UIAlertController(title: "Wrong!", message: "Please re-enter.", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
+                self.present(alert, animated: true)
+            }
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
-
-
 }
 

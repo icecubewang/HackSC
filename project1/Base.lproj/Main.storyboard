@@ -33,8 +33,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
+                                    <action selector="signIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v23-BH-g5J"/>
                                     <action selector="signin:" destination="aa9-2R-Ci3" eventType="touchUpInside" id="fvs-GA-eVQ"/>
-                                    <segue destination="NyU-fU-uXy" kind="show" id="xfV-5a-2Ii"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="heY-gb-DCS">
@@ -59,6 +59,7 @@
                     <connections>
                         <outlet property="password" destination="ls3-d7-EUe" id="CP2-mJ-KDX"/>
                         <outlet property="username" destination="heY-gb-DCS" id="biw-lP-TQE"/>
+                        <segue destination="NyU-fU-uXy" kind="show" identifier="SignInTo3Functions" id="hpC-qO-Ca5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -378,6 +379,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Mks-dP-hQe"/>
-        <segue reference="xfV-5a-2Ii"/>
+        <segue reference="hpC-qO-Ca5"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,13 +7,28 @@
 //
 
 import UIKit
+import Firebase
+import CoreLocation
 
-class ThreeFunctionsViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class ThreeFunctionsViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate {
 
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        // Ask for Authorisation from the User.
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
     }
     
     @IBAction func CameraButton(_ sender: Any) {
@@ -35,7 +50,14 @@ class ThreeFunctionsViewController: UIViewController, UINavigationControllerDele
         // print out the image size as a test
         print(image.size)
         
-        //TODO: Send image to server
+        let imageData: Data = image.pngData()!
+        let imageStr = imageData.base64EncodedString()
+        
+        //Get user's current location
+        guard let locValue: CLLocationCoordinate2D = locationManager.location?.coordinate else { return }
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        
+        Database.database().reference().child("Image").child("\(locValue.latitude) \(locValue.longitude)").setValue(imageStr)
     }
     
     /*

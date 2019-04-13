@@ -6,17 +6,16 @@
 //  Copyright © 2019 Rosalie Ma. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
 import CoreLocation
 import Firebase
 import FirebaseDatabase
 
 class PickVC2: UIViewController, CLLocationManagerDelegate {
-//    @IBOutlet weak var PickPic: UIImageView!
-//    let locationManager = CLLocationManager()
-//    var locValue:CLLocationCoordinate2D
+    @IBOutlet weak var PickPic: UIImageView!
+    let locationManager = CLLocationManager()
+    var locValue = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
+    var ref: DatabaseReference?
     //override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         //super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 //        self.locValue.latitude = Double("")!
@@ -30,34 +29,47 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//        self.PickPic.image = #imageLiteral(resourceName: "loading")
-//
-//        // Ask for Authorisation from the User.
-//        self.locationManager.requestAlwaysAuthorization()
-//
-//        if CLLocationManager.locationServicesEnabled() {
-//            locationManager.delegate = self
-//            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-//            locationManager.startUpdatingLocation()
-//        }
-//
-//        //set picked image
-//        let pick_image:UIImage = load_img(position: locValue)
-//        self.PickPic.image = pick_image
+
+        self.ref = Database.database().reference()
+        self.PickPic.image = #imageLiteral(resourceName: "loading")
+        
+        // Ask for Authorisation from the User.
+        self.locationManager.requestAlwaysAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        
+        //set picked image
+        let pick_image:UIImage = load_img(position: locValue)
+        self.PickPic.image = pick_image
+        
+        //Only for test:
+        //self.PickPic.image = #imageLiteral(resourceName: "test")
         
     }
     
-//     func load_img(position: CLLocationCoordinate2D) -> UIImage {
-//        //TODO: query server using location and decode the image
-//        //self.locValue.latitude, self.locValue.longitude
-//        return
-//    }
-    
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        self.locValue = manager.location!.coordinate
-//
-//        manager.stopUpdatingLocation()
-//    }
+    func load_img(position: CLLocationCoordinate2D) -> UIImage {
+        //TODO: query server using location and decode the image
+        let lat = "\(locValue.latitude)".replacingOccurrences(of: ".", with: "_")
+        let long = "\(locValue.longitude)".replacingOccurrences(of: ".", with: "_")
+        let str_loc = lat + long
+
+        //TODO: If no image to pick
+
+
+        return
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.locValue = manager.location!.coordinate
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        
+        manager.stopUpdatingLocation()
+    }
+
     
     
     // Actions

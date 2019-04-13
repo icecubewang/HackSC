@@ -17,6 +17,8 @@
 		D4F489CB2261A9FC0044FE37 /* PickVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F489CA2261A9FC0044FE37 /* PickVC1.swift */; };
 		D4F489CD2261B20A0044FE37 /* PickVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F489CC2261B20A0044FE37 /* PickVC2.swift */; };
 		D4F489D12261B8E50044FE37 /* PickVC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F489D02261B8E50044FE37 /* PickVC3.swift */; };
+		D4F489D3226266900044FE37 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F489D2226266900044FE37 /* Gallery.swift */; };
+		D4F489D522626E880044FE37 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F489D422626E880044FE37 /* CollectionViewCell.swift */; };
 		D4F70F3D226198DC001EC235 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F70F3C226198DC001EC235 /* AppDelegate.swift */; };
 		D4F70F3F226198DC001EC235 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F70F3E226198DC001EC235 /* ViewController.swift */; };
 		D4F70F42226198DC001EC235 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4F70F40226198DC001EC235 /* Main.storyboard */; };
@@ -62,6 +64,8 @@
 		D4F489CA2261A9FC0044FE37 /* PickVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickVC1.swift; sourceTree = "<group>"; };
 		D4F489CC2261B20A0044FE37 /* PickVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickVC2.swift; sourceTree = "<group>"; };
 		D4F489D02261B8E50044FE37 /* PickVC3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickVC3.swift; sourceTree = "<group>"; };
+		D4F489D2226266900044FE37 /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
+		D4F489D422626E880044FE37 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		D4F70F39226198DC001EC235 /* project1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F70F3C226198DC001EC235 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4F70F3E226198DC001EC235 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				D4F70F3C226198DC001EC235 /* AppDelegate.swift */,
 				D4F70F3E226198DC001EC235 /* ViewController.swift */,
 				D4F70F40226198DC001EC235 /* Main.storyboard */,
+				D4F489D422626E880044FE37 /* CollectionViewCell.swift */,
+				D4F489D2226266900044FE37 /* Gallery.swift */,
 				D4F489D02261B8E50044FE37 /* PickVC3.swift */,
 				D4F489CC2261B20A0044FE37 /* PickVC2.swift */,
 				D4F489CA2261A9FC0044FE37 /* PickVC1.swift */,
@@ -428,7 +434,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4F489D3226266900044FE37 /* Gallery.swift in Sources */,
 				D4F489CB2261A9FC0044FE37 /* PickVC1.swift in Sources */,
+				D4F489D522626E880044FE37 /* CollectionViewCell.swift in Sources */,
 				D4F489D12261B8E50044FE37 /* PickVC3.swift in Sources */,
 				D4F70F3F226198DC001EC235 /* ViewController.swift in Sources */,
 				D4F489CD2261B20A0044FE37 /* PickVC2.swift in Sources */,

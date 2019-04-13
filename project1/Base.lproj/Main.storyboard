@@ -196,7 +196,7 @@
                                 <state key="normal" title="yes"/>
                                 <connections>
                                     <action selector="Confirm:" destination="Wac-ud-oBW" eventType="touchUpInside" id="Z8M-8o-aJW"/>
-                                    <segue destination="0pO-lY-9wf" kind="show" id="F4K-74-KHh"/>
+                                    <segue destination="0pO-lY-9wf" kind="show" identifier="sendPickImg" id="F4K-74-KHh"/>
                                 </connections>
                             </button>
                         </subviews>

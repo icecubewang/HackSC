@@ -8,6 +8,7 @@ target 'project1' do
   # Pods for project1
   pod 'Firebase/Core'
   pod 'FirebaseUI/Storage'
+  pod 'Firebase/Database'
   
   target 'project1Tests' do
     inherit! :search_paths

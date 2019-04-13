@@ -97,14 +97,14 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
     // Actions
     @IBAction func Confirm(_ sender: UIButton) {
     }
-    
-    //send image to next view controller
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "sendPickImg" {
-            let confirmImg = segue.destination as! PickVC3
-            confirmImg.newImg = self.PickPic.image!
-        }
-    }
+//
+//    //send image to next view controller
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "sendPickImg" {
+//            let confirmImg = segue.destination as! PickVC3
+//            confirmImg.newImg = self.PickPic.image!
+//        }
+//    }
     
 }
 

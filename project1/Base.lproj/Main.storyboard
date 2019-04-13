@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -102,10 +102,48 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="urf-7A-LSS"/>
                     </view>
+                    <connections>
+                        <segue destination="hPG-jL-9bo" kind="show" identifier="ManualToAfterCamera" id="cQ4-Vt-8po"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sOW-cb-EbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1034.4000000000001" y="21.139430284857571"/>
+        </scene>
+        <!--After Taken Photo View Controller-->
+        <scene sceneID="fQm-e7-jkY">
+            <objects>
+                <viewController id="hPG-jL-9bo" customClass="AfterTakenPhotoViewController" customModule="project1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l4G-8U-wtX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Image Droped!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQR-Jz-3ZX">
+                                <rect key="frame" x="131" y="322" width="113" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="014-Ks-aDd">
+                                <rect key="frame" x="30" y="40" width="41" height="30"/>
+                                <state key="normal" title="Home"/>
+                                <connections>
+                                    <segue destination="NyU-fU-uXy" kind="show" id="Suj-2S-vXB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="014-Ks-aDd" firstAttribute="leading" secondItem="Jvw-g5-CSi" secondAttribute="leading" constant="30" id="f39-cn-dAK"/>
+                            <constraint firstItem="014-Ks-aDd" firstAttribute="top" secondItem="Jvw-g5-CSi" secondAttribute="top" constant="20" id="iUP-25-vhR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jvw-g5-CSi"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FCf-Om-OPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1093.5999999999999" y="797.45127436281871"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="7Ae-uL-f5z">
@@ -330,6 +368,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="cQ4-Vt-8po"/>
+        <segue reference="Mks-dP-hQe"/>
+        <segue reference="Suj-2S-vXB"/>
         <segue reference="Mks-dP-hQe"/>
         <segue reference="QYj-76-vYH"/>
     </inferredMetricsTieBreakers>

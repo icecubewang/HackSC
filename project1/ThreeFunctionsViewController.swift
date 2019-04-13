@@ -14,6 +14,7 @@ import CoreLocation
 class ThreeFunctionsViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate {
 
     let locationManager = CLLocationManager()
+    let storage = Storage.storage()
     var ref: DatabaseReference?
     
     
@@ -55,16 +56,46 @@ class ThreeFunctionsViewController: UIViewController, UINavigationControllerDele
         print(image.size)
         
         let imageData: Data = image.pngData()!
-        let imageStr = imageData.base64EncodedString()
+        //let imageStr = imageData.base64EncodedString()
         
         //print("image: \(imageStr)")
         
         //Get user's current location
         //guard let locValue: CLLocationCoordinate2D = locationManager.location?.coordinate else { return }
-        let locValue = locationManager.location?.coordinate
-        print("locations = \(locValue?.latitude) \(locValue?.longitude)")
-        ref?.child("Images").childByAutoId().setValue("Does this even work?")
-        ref?.child("Image").child("\(locValue?.latitude) \(locValue?.longitude)").setValue(imageStr)
+        let locValue: CLLocationCoordinate2D = locationManager.location!.coordinate
+        let latitude = "\(locValue.latitude)".replacingOccurrences(of: ".", with: "_")
+        let longitude = "\(locValue.longitude)".replacingOccurrences(of: ".", with: "_")
+        
+        
+        // Trying storage in data memory with Firebase Memory
+        let storageRef = storage.reference()
+        let data = imageData
+        // Create a reference to the file you want to upload
+        let riversRef = storageRef.child("images/rivers.jpg")
+        
+        // Create file metadata including the content type
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        
+
+        // Upload the file to the path "images/rivers.jpg"
+        let uploadTask = riversRef.putData(data, metadata: metadata) { (metadata, error) in
+            guard let metadata = metadata else {
+                // Uh-oh, an error occurred!
+                return
+            }
+
+            // You can also access to download URL after upload.
+            riversRef.downloadURL { (url, error) in
+                guard let downloadURL = url else {
+                    // Uh-oh, an error occurred!
+                    return
+                }
+                print("url： " + downloadURL.absoluteString)
+                //Save in firebase key-value
+                self.ref?.child("Image").child(latitude + longitude).setValue(downloadURL.absoluteString)
+            }
+        }
     }
     
     /*

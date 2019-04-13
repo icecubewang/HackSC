@@ -6,8 +6,6 @@
 //  Copyright © 2019 Rosalie Ma. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
 
 class PickVC1: UIViewController {

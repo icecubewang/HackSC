@@ -9,7 +9,9 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
     var locValue = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
     var ref: DatabaseReference?
     var databaseHandle: DatabaseHandle?
+    var deleteLoc: String?
     var url: String?
+    var randid: String?
     //override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     //super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     //        self.locValue.latitude = Double("")!
@@ -66,18 +68,21 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
                     distance=distanceInMeters
                     clost_loc=location as! String
                 }
+                self.deleteLoc = clost_loc
             }
             
             self.ref?.child("Location").child(clost_loc).observeSingleEvent(of: .value, with: { (snapshot) in
                 // Get user value
-      let imagedict = snapshot.value as? NSDictionary
+                let imagedict = snapshot.value as? NSDictionary
 
             if let y = imagedict{
-                let index  = Int.random(in: 0 ..< imagedict!.allKeys.count)
+                let index = Int.random(in: 0 ..< imagedict!.allKeys.count)
                 let randout = Array(imagedict!)[index].value as! String
                 print(randout)
-                self.url=randout
+                self.url = randout
+                //self.randid = Array(imagedict!)[index].key as! String
                 self.PickPic.image = self.downloadImage(str: randout)
+                
             } else {
                     self.PickPic.image = #imageLiteral(resourceName: "default")
                 }
@@ -117,6 +122,8 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
             
             let user_name = UserDefaults.standard.object(forKey: "Username") as! String
         self.ref?.child("UserImageList").child(user_name).childByAutoId().setValue(self.url)
+            ref?.child("Location").child(self.deleteLoc!).child(self.randid!).removeValue()
+            
             let confirmImg = segue.destination as! PickVC3
             confirmImg.newImg = self.PickPic.image!
         }

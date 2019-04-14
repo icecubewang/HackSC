@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -114,9 +114,8 @@
                                     <segue destination="MTp-Q4-GsW" kind="show" id="6lT-1L-weM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ar1-iO-405">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ar1-iO-405">
                                 <rect key="frame" x="16" y="20" width="51" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Setting" image="Image-5"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="Uvl-bt-GTO"/>
@@ -235,9 +234,9 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDn-Qo-qrz">
-                                <rect key="frame" x="26" y="40" width="41" height="30"/>
-                                <state key="normal" title="Home"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDn-Qo-qrz">
+                                <rect key="frame" x="16" y="10" width="109" height="60"/>
+                                <state key="normal" title="Home" image="Image"/>
                                 <connections>
                                     <segue destination="NyU-fU-uXy" kind="show" id="dJf-A0-ypd"/>
                                 </connections>
@@ -422,13 +421,9 @@
         <image name="Image-6" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="F4K-74-KHh"/>
-        <segue reference="uld-fZ-NDB"/>
-        <segue reference="tc9-jE-1B0"/>
-        <segue reference="QYj-76-vYH"/>
         <segue reference="k0k-kg-a9v"/>
         <segue reference="Mks-dP-hQe"/>
         <segue reference="apX-mB-L34"/>
-        <segue reference="hpC-qO-Ca5"/>
+        <segue reference="dJf-A0-ypd"/>
     </inferredMetricsTieBreakers>
 </document>

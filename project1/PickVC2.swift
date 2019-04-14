@@ -34,23 +34,15 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
-        
-        //set picked image
+
         let lat = "\(self.locValue.latitude)".replacingOccurrences(of: ".", with: "_")
         let long = "\(self.locValue.longitude)".replacingOccurrences(of: ".", with: "_")
         let str_loc = lat + long
         var  clost_loc = "nil"
-        //TODO: If no image to pick
-        // Look through the locations on Firebase to find the closest
         ref?.child("Location").observeSingleEvent(of: .value, with: { (locsnapshot) in
-            // Get user value
-            //print(locsnapshot)
             let locdict = locsnapshot.value as! NSDictionary
-            //print(locdict as Any)
-            //print("keys")
             let  lockeys=locdict.allKeys
             var  distance = CLLocationDistance(-1)
-            
             for location in lockeys{
                 //print(location)
                 
@@ -58,19 +50,12 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
                 var fullsplit = locconv.characters.split{$0 == "-"}.map(String.init)
                 let lat_tt = Double(fullsplit[0].replacingOccurrences(of: "_", with: "."))
                 let long_tt = Double(fullsplit[1].replacingOccurrences(of: "_", with: "."))
-                //print(lat_tt as Any)
-                //print(long_tt as Any)
-                
-                
-                
+             
                 let coordinate₀ = CLLocation(latitude: self.locValue.latitude, longitude: self.locValue.longitude)
                 let coordinate₁ = CLLocation(latitude: lat_tt!, longitude: long_tt!)
                 
                 let distanceInMeters = coordinate₀.distance(from: coordinate₁)
-                //print("distanceInMeters")
-                //print(distanceInMeters)// result is in meters
-                //print("distance")
-                // print(distance)
+
                 if distance == -1{
                     distance=distanceInMeters
                     clost_loc=location as! String
@@ -80,41 +65,28 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
                 else if Double(distanceInMeters)<distance {
                     distance=distanceInMeters
                     clost_loc=location as! String
-                    //print ("clost_loc FInal")
-                    //print (clost_loc)
                 }
-                //                newm=
-                //                if 0 < distance {
-                //                    distance = new_min
-                //                    clost_loc = location}
             }
-            //print(locdict.allKeys)
-            // Random image url generated from Firebase given a longitude, latitude.
-            // ...
             
             self.ref?.child("Location").child(clost_loc).observeSingleEvent(of: .value, with: { (snapshot) in
                 // Get user value
-                let imagedict = snapshot.value as? NSDictionary
-            
-            //print("val pic 1")
-            //print(imagedict!["Picture1"]!)
-            if let _ = imagedict {
+      let imagedict = snapshot.value as? NSDictionary
+
+            if let y = imagedict{
                 let index  = Int.random(in: 0 ..< imagedict!.allKeys.count)
                 let randout = Array(imagedict!)[index].value as! String
                 print(randout)
                 self.url=randout
                 self.PickPic.image = self.downloadImage(str: randout)
             } else {
-                    
                     self.PickPic.image = #imageLiteral(resourceName: "default")
-                    
                 }
                 
             }) { (error) in
                 print(error.localizedDescription)
             }
             
-        })
+            })
         
         //TODO: delete pic
     }

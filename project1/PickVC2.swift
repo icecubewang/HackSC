@@ -80,7 +80,7 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
                 let randout = Array(imagedict!)[index].value as! String
                 print(randout)
                 self.url = randout
-                //self.randid = Array(imagedict!)[index].key as! String
+                self.randid = Array(imagedict!)[index].key as! String
                 self.PickPic.image = self.downloadImage(str: randout)
                 
             } else {
@@ -122,8 +122,23 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
             
             let user_name = UserDefaults.standard.object(forKey: "Username") as! String
         self.ref?.child("UserImageList").child(user_name).childByAutoId().setValue(self.url)
-            ref?.child("Location").child(self.deleteLoc!).child(self.randid!).removeValue()
-            
+            print(self.randid)
+            print(self.deleteLoc)
+            //ref?.child("Location").child(self.deleteLoc!).child(self.randid!).removeValue()
+            self.ref?.child("Location").child(self.deleteLoc!).observeSingleEvent(of: .value, with: { (snapshot) in
+                // Get user value
+                let imagedict = snapshot.value as? NSDictionary
+                print(imagedict)
+                if let rem = imagedict{
+                    print("The folder is not empty")
+                } else {
+                    print("The folder is empty")
+                    self.ref?.child("Location").child(self.deleteLoc!).removeValue()
+                }
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
             let confirmImg = segue.destination as! PickVC3
             confirmImg.newImg = self.PickPic.image!
         }

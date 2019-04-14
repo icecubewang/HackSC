@@ -21,10 +21,12 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
     //    required init?(coder aDecoder: NSCoder) {
     //        fatalError("init(coder:) has not been implemented")
     //    }
+    @IBOutlet weak var homeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.homeButton.setImage(UIImage(named: "home"), for: .normal)
         ref = Database.database().reference()
         self.PickPic.image = #imageLiteral(resourceName: "loading")
         
@@ -80,7 +82,7 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
                 let randout = Array(imagedict!)[index].value as! String
                 print(randout)
                 self.url = randout
-                //self.randid = Array(imagedict!)[index].key as! String
+                self.randid = Array(imagedict!)[index].key as! String
                 self.PickPic.image = self.downloadImage(str: randout)
                 
             } else {

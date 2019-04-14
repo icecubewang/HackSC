@@ -52,6 +52,10 @@
                                     <action selector="createAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="klW-HM-VCG"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-4" translatesAutoresizingMaskIntoConstraints="NO" id="KnX-lG-5Oj">
+                                <rect key="frame" x="67" y="108" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -75,35 +79,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZR-A0-H0F">
-                                <rect key="frame" x="16" y="69" width="343" height="171"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZR-A0-H0F">
+                                <rect key="frame" x="-744" y="-767" width="1914" height="1857"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Gallery"/>
+                                <state key="normal" title="Gallery" image="Image-1"/>
                                 <connections>
                                     <segue destination="kVm-d2-ZSW" kind="show" id="apX-mB-L34"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aii-Bk-Zan">
-                                <rect key="frame" x="16" y="248" width="343" height="171"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aii-Bk-Zan">
+                                <rect key="frame" x="85" y="263.5" width="234" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Pick"/>
+                                <state key="normal" title="Pick" image="Image-3"/>
                                 <connections>
                                     <segue destination="Hc6-bm-arY" kind="showDetail" id="Mks-dP-hQe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJS-rI-CRq">
-                                <rect key="frame" x="16" y="427" width="343" height="171"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJS-rI-CRq">
+                                <rect key="frame" x="-731" y="464.5" width="1895" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Camera"/>
+                                <state key="normal" title="Camera" image="Image-2"/>
                                 <connections>
                                     <action selector="CameraButton:" destination="NyU-fU-uXy" eventType="touchUpInside" id="tud-9R-mOM"/>
                                     <segue destination="MTp-Q4-GsW" kind="show" id="6lT-1L-weM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ar1-iO-405">
-                                <rect key="frame" x="16" y="31" width="49" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ar1-iO-405">
+                                <rect key="frame" x="16" y="20" width="51" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Setting"/>
+                                <state key="normal" title="Setting" image="Image-5"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="Uvl-bt-GTO"/>
                                 </connections>
@@ -135,9 +139,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="014-Ks-aDd">
-                                <rect key="frame" x="30" y="40" width="41" height="30"/>
-                                <state key="normal" title="Home"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="014-Ks-aDd">
+                                <rect key="frame" x="30" y="40" width="50" height="50"/>
+                                <state key="normal" title="Home" image="Image"/>
                                 <connections>
                                     <segue destination="NyU-fU-uXy" kind="show" id="Suj-2S-vXB"/>
                                 </connections>
@@ -153,7 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FCf-Om-OPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1775" y="983"/>
+            <point key="canvasLocation" x="1773.5999999999999" y="982.75862068965523"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="7Ae-uL-f5z">
@@ -237,17 +241,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNx-mI-53N">
-                                <rect key="frame" x="30" y="40" width="41" height="30"/>
-                                <state key="normal" title="Home"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNx-mI-53N">
+                                <rect key="frame" x="30" y="40" width="50" height="50"/>
+                                <state key="normal" title="Home" image="Image"/>
                                 <connections>
                                     <segue destination="NyU-fU-uXy" kind="show" id="dqB-9M-SEQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbO-na-fhJ">
-                                <rect key="frame" x="84" y="170" width="206" height="179"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbO-na-fhJ">
+                                <rect key="frame" x="37" y="170" width="342" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Pick!"/>
+                                <state key="normal" title="Pick!" image="Image-6"/>
                                 <connections>
                                     <action selector="PickPic:" destination="Hc6-bm-arY" eventType="touchUpInside" id="H3q-8v-vec"/>
                                     <segue destination="Wac-ud-oBW" kind="showDetail" id="dQo-Re-JsO"/>
@@ -277,9 +281,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9NR-vB-Alv" customClass="PickPic">
                                 <rect key="frame" x="51" y="100" width="273" height="392"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQa-To-Ze7">
-                                <rect key="frame" x="30" y="40" width="41" height="30"/>
-                                <state key="normal" title="Home"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQa-To-Ze7">
+                                <rect key="frame" x="30" y="42" width="50" height="50"/>
+                                <state key="normal" title="Home" image="Image"/>
                                 <connections>
                                     <segue destination="NyU-fU-uXy" kind="show" id="ejN-ty-vQm"/>
                                 </connections>
@@ -317,6 +321,7 @@
                     </view>
                     <connections>
                         <outlet property="PickPic" destination="9NR-vB-Alv" id="nBv-2n-36A"/>
+                        <outlet property="homeButton" destination="nQa-To-Ze7" id="pQ4-3h-OtV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TEu-lH-CdG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -331,9 +336,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLe-ba-7aK">
-                                <rect key="frame" x="30" y="40" width="41" height="30"/>
-                                <state key="normal" title="Home"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLe-ba-7aK">
+                                <rect key="frame" x="30" y="40" width="109" height="60"/>
+                                <state key="normal" title="Home" image="Image"/>
                                 <connections>
                                     <segue destination="NyU-fU-uXy" kind="show" id="QYj-76-vYH"/>
                                 </connections>
@@ -341,20 +346,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HZe-2u-hcD">
                                 <rect key="frame" x="51" y="100" width="273" height="392"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7J-dU-WCj">
-                                <rect key="frame" x="61" y="507" width="30" height="30"/>
-                                <state key="normal" title="FB"/>
-                                <connections>
-                                    <action selector="ShareFB:" destination="0pO-lY-9wf" eventType="touchUpInside" id="qzW-bf-JRL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jus-Sb-WiL">
-                                <rect key="frame" x="259" y="507" width="55" height="30"/>
-                                <state key="normal" title="WeChat"/>
-                                <connections>
-                                    <action selector="ShareButton:" destination="0pO-lY-9wf" eventType="touchUpInside" id="AVk-9i-7ph"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9AA-zy-fkW">
                                 <rect key="frame" x="116" y="572" width="48" height="30"/>
                                 <state key="normal" title="Gallery"/>
@@ -373,11 +364,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="HZe-2u-hcD" secondAttribute="trailing" constant="35" id="6ee-vL-KXK"/>
-                            <constraint firstItem="J7J-dU-WCj" firstAttribute="leading" secondItem="TmE-a7-pbd" secondAttribute="leadingMargin" constant="45" id="BWI-wn-SA5"/>
-                            <constraint firstItem="J7J-dU-WCj" firstAttribute="top" secondItem="HZe-2u-hcD" secondAttribute="bottom" constant="15" id="D6k-a7-9sm"/>
                             <constraint firstAttribute="bottomMargin" secondItem="HZe-2u-hcD" secondAttribute="bottom" constant="175" id="HZ2-pw-qVe"/>
                             <constraint firstItem="9AA-zy-fkW" firstAttribute="leading" secondItem="TmE-a7-pbd" secondAttribute="leadingMargin" constant="100" id="IHW-f5-1IX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Jus-Sb-WiL" secondAttribute="trailing" constant="45" id="L0u-FQ-lyN"/>
                             <constraint firstItem="HZe-2u-hcD" firstAttribute="leading" secondItem="TmE-a7-pbd" secondAttribute="leadingMargin" constant="35" id="MWp-AJ-CZv"/>
                             <constraint firstAttribute="bottomMargin" secondItem="9AA-zy-fkW" secondAttribute="bottom" constant="65" id="TGH-5N-38i"/>
                             <constraint firstItem="DLe-ba-7aK" firstAttribute="leading" secondItem="fIx-dw-wWM" secondAttribute="leading" constant="30" id="X0j-gb-Luy"/>
@@ -385,7 +373,6 @@
                             <constraint firstItem="DLe-ba-7aK" firstAttribute="top" secondItem="fIx-dw-wWM" secondAttribute="top" constant="20" id="arE-R7-soU"/>
                             <constraint firstItem="DLe-ba-7aK" firstAttribute="top" secondItem="TmE-a7-pbd" secondAttribute="topMargin" constant="20" id="pFS-3P-Ets"/>
                             <constraint firstItem="DLe-ba-7aK" firstAttribute="leading" secondItem="TmE-a7-pbd" secondAttribute="leadingMargin" constant="14" id="qZr-VU-OOh"/>
-                            <constraint firstItem="Jus-Sb-WiL" firstAttribute="top" secondItem="HZe-2u-hcD" secondAttribute="bottom" constant="15" id="rZz-m9-t2U"/>
                             <constraint firstItem="HZe-2u-hcD" firstAttribute="top" secondItem="TmE-a7-pbd" secondAttribute="topMargin" constant="80" id="yAj-r0-Wab"/>
                             <constraint firstAttribute="bottomMargin" secondItem="JO3-qX-17m" secondAttribute="bottom" constant="65" id="zLh-aY-MV4"/>
                         </constraints>
@@ -400,10 +387,19 @@
             <point key="canvasLocation" x="3635" y="-552"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="60" height="60"/>
+        <image name="Image-1" width="200" height="200"/>
+        <image name="Image-2" width="200" height="200"/>
+        <image name="Image-3" width="200" height="200"/>
+        <image name="Image-4" width="300" height="300"/>
+        <image name="Image-5" width="40" height="40"/>
+        <image name="Image-6" width="300" height="300"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="F4K-74-KHh"/>
-        <segue reference="nyK-80-omK"/>
+        <segue reference="uld-fZ-NDB"/>
         <segue reference="tc9-jE-1B0"/>
-        <segue reference="ejN-ty-vQm"/>
+        <segue reference="QYj-76-vYH"/>
     </inferredMetricsTieBreakers>
 </document>

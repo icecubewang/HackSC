@@ -98,9 +98,6 @@ class ThreeFunctionsViewController: UIViewController, UINavigationControllerDele
                 self.performSegue(withIdentifier: "ManualToAfterCamera",
                                   sender: self)
             }
-            
-            self.performSegue(withIdentifier: "ManualToAfterCamera",
-                              sender: self)
         }
     }
     

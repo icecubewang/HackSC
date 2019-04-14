@@ -22,7 +22,7 @@
                                 <rect key="frame" x="103" y="327" width="169" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                 <connections>
                                     <action selector="Password:" destination="aa9-2R-Ci3" eventType="editingDidEnd" id="duZ-oW-B4v"/>
                                 </connections>
@@ -424,6 +424,6 @@
         <segue reference="k0k-kg-a9v"/>
         <segue reference="Mks-dP-hQe"/>
         <segue reference="apX-mB-L34"/>
-        <segue reference="dJf-A0-ypd"/>
+        <segue reference="hpC-qO-Ca5"/>
     </inferredMetricsTieBreakers>
 </document>

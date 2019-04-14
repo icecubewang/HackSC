@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class GalleryViewController: UIViewController,  UICollectionViewDelegate {
 
     
     @IBOutlet weak var gallery: UICollectionView!
+    
+    var ref: DatabaseReference?
+    var databaseHandle: DatabaseHandle?
     
     let reuseIdentifier = "ImgCell"
     var userImgs:[String] = ["https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Torres_del_Paine_y_cuernos_del_Paine%2C_montaje.jpg/284px-Torres_del_Paine_y_cuernos_del_Paine%2C_montaje.jpg"]
@@ -21,16 +26,29 @@ class GalleryViewController: UIViewController,  UICollectionViewDelegate {
         super.viewDidLoad()
         gallery.dataSource = self
         gallery.delegate = self
+        self.ref = Database.database().reference()
         //self.collectionView.reloaSections(IndexSet=0)
         
+        self.getURL()
         
 
         // Do any additional setup after loading the view.
     }
     
-    func getURL() -> () {
+    func getURL() {
         //get a list of URLs(strings) from server
         //self.userImgs =
+        var urlList: [String] = [String]()
+        let username = UserDefaults.standard.object(forKey: "Username") as! String
+        databaseHandle = ref?.child("UserImageList").child(username).observe(.childAdded, with: { (snapshot) in
+            let imageList = snapshot.value as! [NSString]
+            for url in imageList {
+                print(url)
+                urlList.append(url as! String)
+            }
+        })
+        self.userImgs = urlList
+        self.gallery.reloadData()
         
     }
     

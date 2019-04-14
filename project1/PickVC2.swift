@@ -94,26 +94,17 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
             
             self.ref?.child("Location").child(clost_loc).observeSingleEvent(of: .value, with: { (snapshot) in
                 // Get user value
-      let imagedict = snapshot.value as? NSDictionary
+                let imagedict = snapshot.value as? NSDictionary
             
             //print("val pic 1")
             //print(imagedict!["Picture1"]!)
-            if let y = imagedict{
+            if let _ = imagedict {
                 let index  = Int.random(in: 0 ..< imagedict!.allKeys.count)
                 let randout = Array(imagedict!)[index].value as! String
                 print(randout)
                 self.url=randout
                 self.PickPic.image = self.downloadImage(str: randout)
             } else {
-                
-                //print("val pic 1")
-                //print(imagedict!["Picture1"]!)
-                if let y = imagedict{
-                    let index  = Int.random(in: 0 ..< imagedict!.allKeys.count)
-                    let randout = Array(imagedict!)[index].value as! String
-                    print(randout)
-                    self.PickPic.image = self.downloadImage(str: randout)
-                } else {
                     
                     self.PickPic.image = #imageLiteral(resourceName: "default")
                     

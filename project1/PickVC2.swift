@@ -23,7 +23,7 @@ class PickVC2: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.ref = Database.database().reference()
+        ref = Database.database().reference()
         self.PickPic.image = #imageLiteral(resourceName: "loading")
         
         // Ask for Authorisation from the User.

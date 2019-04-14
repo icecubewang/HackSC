@@ -19,14 +19,14 @@ class GalleryViewController: UIViewController,  UICollectionViewDelegate {
     var databaseHandle: DatabaseHandle?
     
     let reuseIdentifier = "ImgCell"
-    var userImgs:[String] = ["https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Torres_del_Paine_y_cuernos_del_Paine%2C_montaje.jpg/284px-Torres_del_Paine_y_cuernos_del_Paine%2C_montaje.jpg"]
+    var userImgs:[String] = []
     //var userImgs:[String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         gallery.dataSource = self
         gallery.delegate = self
-        self.ref = Database.database().reference()
+        ref = Database.database().reference()
         //self.collectionView.reloaSections(IndexSet=0)
         
         self.getURL()
@@ -41,14 +41,18 @@ class GalleryViewController: UIViewController,  UICollectionViewDelegate {
         var urlList: [String] = [String]()
         let username = UserDefaults.standard.object(forKey: "Username") as! String
         databaseHandle = ref?.child("UserImageList").child(username).observe(.childAdded, with: { (snapshot) in
-            let imageList = snapshot.value as! [NSString]
-            for url in imageList {
-                print(url)
-                urlList.append(url as! String)
+            let newurl = snapshot.value as? String
+            if let aimage = newurl{
+                self.userImgs.append(aimage)
+                self.gallery.reloadData()
             }
+            print ("usrImgs")
+            print (self.userImgs)
         })
-        self.userImgs = urlList
-        self.gallery.reloadData()
+        
+        //self.collectionView.reloadData()
+
+        
         
     }
     
@@ -81,6 +85,7 @@ extension GalleryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //for test:
         //return 5
+        print("How many images?")
         print(self.userImgs.count)
         return self.userImgs.count
     }
@@ -89,6 +94,7 @@ extension GalleryViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
 
         let urlStr = self.userImgs[indexPath.row]
+        print("urlstr")
         print(urlStr)
         cell.backgroundColor = .white
 

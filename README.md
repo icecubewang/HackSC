@@ -20,4 +20,5 @@ Todo backlog:
 * Add login from FB, Ins, WeChat, Snapchat, etc. 
 * Solve provisioning profile problem: currently only runs on one developer's phone. 
 * Enable sharing to other social media platform. 
+* Handle possible race condition issue. 
 * Release activity :) 
